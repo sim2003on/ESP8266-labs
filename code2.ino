@@ -58,42 +58,42 @@ void handle_NotFound(){
   server.send(404, "text/plain", "Not found");
 }
 
-String SendHTML(float Temperaturestat,float Humiditystat){
-  String ptr = "<!DOCTYPE html> <html>\n";
-  ptr +="<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr +="<title>ESP8266 Weather Report</title>\n";
-  ptr +="<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
-  ptr +="body{margin-top: 50px;} h1 {color: #444444;margin: 50px auto 30px;}\n";
-  ptr +="p {font-size: 24px;color: #444444;margin-bottom: 10px;}\n";
-  ptr +="</style>\n";
-  ptr +="<script>\n";//ajax
-  ptr +="setInterval(loadDoc,200);\n";
-  ptr +="function loadDoc() {\n";
-  ptr +="var xhttp = new XMLHttpRequest();\n";
-  ptr +="xhttp.onreadystatechange = function() {\n";
-  ptr +="if (this.readyState == 4 && this.status == 200) {\n";
-  ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
-  ptr +="};\n";
-  ptr +="xhttp.open(\"GET\", \"/\", true);\n";
-  ptr +="xhttp.send();\n";
-  ptr +="}\n";
-  ptr +="</script>\n";//ajax
-  ptr +="</head>\n";
-  ptr +="<body>\n";
-  ptr +="<div id=\"webpage\">\n";
-  ptr +="<h1>ESP8266 NodeMCU Weather Report</h1>\n";
-  ptr +="<p>Temperature: ";
-  ptr +=(int)Temperaturestat;
-  ptr +="°C</p>";
-  ptr +="<p>Humidity: ";
-  ptr +=(int)Humiditystat;
-  ptr +="%</p>";
+// String SendHTML(float Temperaturestat,float Humiditystat){
+//   String ptr = "<!DOCTYPE html> <html>\n";
+//   ptr +="<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
+//   ptr +="<title>ESP8266 Weather Report</title>\n";
+//   ptr +="<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
+//   ptr +="body{margin-top: 50px;} h1 {color: #444444;margin: 50px auto 30px;}\n";
+//   ptr +="p {font-size: 24px;color: #444444;margin-bottom: 10px;}\n";
+//   ptr +="</style>\n";
+//   ptr +="<script>\n";//ajax
+//   ptr +="setInterval(loadDoc,200);\n";
+//   ptr +="function loadDoc() {\n";
+//   ptr +="var xhttp = new XMLHttpRequest();\n";
+//   ptr +="xhttp.onreadystatechange = function() {\n";
+//   ptr +="if (this.readyState == 4 && this.status == 200) {\n";
+//   ptr +="document.getElementById(\"webpage\").innerHTML =this.responseText}\n";
+//   ptr +="};\n";
+//   ptr +="xhttp.open(\"GET\", \"/\", true);\n";
+//   ptr +="xhttp.send();\n";
+//   ptr +="}\n";
+//   ptr +="</script>\n";//ajax
+//   ptr +="</head>\n";
+//   ptr +="<body>\n";
+//   ptr +="<div id=\"webpage\">\n";
+//   ptr +="<h1>ESP8266 NodeMCU Weather Report</h1>\n";
+//   ptr +="<p>Temperature: ";
+//   ptr +=(int)Temperaturestat;
+//   ptr +="°C</p>";
+//   ptr +="<p>Humidity: ";
+//   ptr +=(int)Humiditystat;
+//   ptr +="%</p>";
   
-  ptr +="</div>\n";
-  ptr +="</body>\n";
-  ptr +="</html>\n";
-  return ptr;
-}
+//   ptr +="</div>\n";
+//   ptr +="</body>\n";
+//   ptr +="</html>\n";
+//   return ptr;
+// }
 
 String SendHTML(float TempCstat,float TempFstat,float Humiditystat){
   String ptr = "<!DOCTYPE html> <html>\n";
